@@ -15,7 +15,7 @@ def create_image(filename):
 
     out = Image.new("RGB", (400, 300), (0, 0, 0))
     # get a font
-    fnt = ImageFont.truetype(filename, 70)
+    fnt = ImageFont.truetype(filename, 50)
     print(filename)
     # get a drawing context
     d = ImageDraw.Draw(out)
