@@ -15,13 +15,13 @@ def create_image(filename):
 
     out = Image.new("RGB", (400, 300), (0, 0, 0))
     # get a font
-    fnt = ImageFont.truetype(filename, 60)
+    fnt = ImageFont.truetype(filename, 80)
     print(filename)
     # get a drawing context
     d = ImageDraw.Draw(out)
 
     # draw multiline text
-    d.multiline_text((110, 20), "\nDC>>>\nPython", font=fnt, fill=(255, 255, 255))
+    d.multiline_text((110, 0), "\nDC>>>\nPython", font=fnt, fill=(255, 255, 255))
 
     fontname = filename.split(".")[0]  # Remove file extension
     out.save("logo_%s.png" % fontname, "PNG")
