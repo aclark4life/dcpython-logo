@@ -1,7 +1,7 @@
 # Project Makefile
 # ================
 #
-# A generic Makefile for projects
+# A generic makefile for projects
 #
 # - https://github.com/project-makefile/project-makefile
 #
@@ -9,7 +9,7 @@
 # License
 # ------------------------------------------------------------------------------ 
 #
-# Copyright 2016—2021 Jeffrey A. Clark
+# Copyright 2016—2021 Jeffrey A. Clark, "Alex"
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -28,17 +28,9 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+
 #
-# Checkmake
-# ------------------------------------------------------------------------------ 
-# Make checkmake happy
-
-.PHONY: all
-all-default: list-targets-default
-
-.PHONY: clean
-clean: list-targets-default
-
 #
 # Includes
 # ------------------------------------------------------------------------------ 
@@ -48,12 +40,20 @@ include base.mk
 # Overrides
 # ------------------------------------------------------------------------------ 
 #
-# Here you can override variables, targets, etc.
+# E.g.
 #
+# Uncomment next line to customize the default goal
 .DEFAULT_GOAL := commit-push
-#PROJECT := project
-.PHONY: serve
-serve: django-serve-webpack
+#
+# Uncomment next line to customize the project name
+#PROJECT_NAME := my_project
+#
+# Uncomment next line to customize the commit message
+#COMMIT_MESSAGE := Update
+#
+# Uncomment next two lines to add a "phony" target
+#.PHONY: serve
+#serve: django-serve-webpack
 
 logo:
 	python logo.py
